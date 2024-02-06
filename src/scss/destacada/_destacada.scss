@@ -1,0 +1,51 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.destacada {
+  padding-top: 5rem;
+
+  &__grid {
+    @include m.tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__imagen {
+    background-image: url(../img/destacada.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90rem;
+    height: 40rem;
+    @include m.tablet {
+        height: auto;
+        background-size: cover;
+    }
+  }
+  &__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: v.$primario;
+    padding: 10rem 5rem;
+    color: v.$blanco;
+  }
+  &__titulo{
+
+  }
+  &__descripcion{
+    p{
+      color: v.$blanco;
+    }
+  }
+  &__boton{
+    button{
+        width: 100%;
+        background-color: v.$blanco;
+        color: v.$primario;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: 0;
+    }
+  }
+}

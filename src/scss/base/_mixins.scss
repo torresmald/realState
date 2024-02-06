@@ -51,11 +51,14 @@
     grid-template-columns: repeat($columnas, 1fr);
 }
 
-@mixin headings{
+@mixin headings($block : false){
     font-weight: 400;
 
     span{
         font-weight: 700;
+        @if($block){
+            display: block;
+        }
     }
 
     &::after{

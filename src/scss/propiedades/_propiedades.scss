@@ -27,10 +27,15 @@
     @include m.tablet { 
         margin-bottom: 0;
     }
+    @for $i from 1 through 6 {
+        $imagen : '../img/propiedad_' + $i + '.jpg';
+        &:nth-child(#{$i}) &__imagen {
+            background-image:linear-gradient(to bottom,  transparentize(v.$negro, 1%) 0%, transparentize(v.$negro, .3%) 100%), url($imagen);
+        }
+    }
 
     &__imagen{
         position: relative;
-        background-image: linear-gradient(to bottom,  transparentize(v.$negro, 1%) 0%, transparentize(v.$negro, .3%) 100%),  url(../img/propiedad_1.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -41,5 +46,26 @@
         position: absolute;
         bottom: 0;
         color: v.$blanco;
+    }
+    &__descripcion{
+        padding: 2rem;
+        font-weight: 700;
+    }
+    &__texto{
+        font-size: 1.6rem;
+        margin: 0;
+    }
+    &__precio{
+        font-size: 2.2rem;
+        margin: 0 0 1rem 0;
+    }
+    &__boton{
+        width: 100%;
+        background-color: v.$primario;
+        color: v.$blanco;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: 0;
     }
 }
