@@ -44,7 +44,8 @@
     }
     &__nombre{
         position: absolute;
-        bottom: 0;
+        bottom: 1rem;
+        left: 2rem;
         color: v.$blanco;
     }
     &__descripcion{

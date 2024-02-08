@@ -30,22 +30,71 @@
     padding: 15rem 2rem 3rem 2rem;
     background-color: v.$blanco;
   }
-  &__nombre{
+  &__nombre {
     text-align: center;
     font-size: 2.8rem;
     font-weight: 700;
   }
-  &__texto{
+  &__texto {
     text-align: center;
-    &::before{
-        content: '';
-        background-image: url(../img/quote.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        display: block;
-        width: 3rem;
-        height: 3rem;
+    &::before {
+      content: "";
+      background-image: url(../img/quote.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
 
+.entradas {
+  margin-bottom: 2rem;
+  background-color: v.$blanco;
+  &__contenido {
+    padding: 1rem;
+  }
+  &__nombre {
+    margin: 1rem 0;
+  }
+  &__meta {
+    margin: 0;
+    font-size: 1rem;
+  }
+  &__descripcion {
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  &__boton {
+    width: 100%;
+    background-color: v.$primario;
+    color: v.$blanco;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+  }
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    &__imagen-contenedor {
+      grid-column: 1/3;
+    }
+    &__imagen {
+      height: 100%;
+      object-fit: cover;
+    }
+    &__contenido {
+      grid-column: 3/6;
+      padding: 2rem;
+    }
+    &__boton {
+      width: 50%;
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
